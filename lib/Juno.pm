@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno;
 {
-  $Juno::VERSION = '0.002';
+  $Juno::VERSION = '0.003';
 }
 # ABSTRACT: Asynchronous event-driven checking mechanism
 
@@ -18,7 +18,7 @@ has hosts => (
 
 has interval => (
     is      => 'ro',
-    isa     => 'Int',
+    isa     => 'Num',
     default => 10,
 );
 
@@ -87,7 +87,7 @@ Juno - Asynchronous event-driven checking mechanism
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::FPing;
 {
-  $Juno::Check::FPing::VERSION = '0.002';
+  $Juno::Check::FPing::VERSION = '0.003';
 }
 # ABSTRACT: An FPing check for Juno
 
@@ -23,7 +23,7 @@ has '+cmd' => (
     default => sub {
         my $self  = shift;
         my $count = $self->count;
-        return 'fping -A -q -c $count %s';
+        return "fping -A -q -c $count \%h";
     },
 );
 
@@ -68,7 +68,7 @@ Juno::Check::FPing - An FPing check for Juno
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::TCP;
 {
-  $Juno::Check::TCP::VERSION = '0.002';
+  $Juno::Check::TCP::VERSION = '0.003';
 }
 # ABSTRACT: A TCP check for Juno
 
@@ -29,6 +29,10 @@ sub check {
 
         tcp_connect $host, $port, sub {
             my ($fh) = @_;
+
+            if ( $self->has_on_result ) {
+                $self->on_result->( $self, $fh );
+            }
 
             if ( ! defined $fh ) {
                 my $error = $!;
@@ -62,7 +66,7 @@ Juno::Check::TCP - A TCP check for Juno
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

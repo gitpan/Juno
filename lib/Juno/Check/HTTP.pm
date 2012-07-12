@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::HTTP;
 {
-  $Juno::Check::HTTP::VERSION = '0.002';
+  $Juno::Check::HTTP::VERSION = '0.003';
 }
 # ABSTRACT: An HTTP check for Juno
 
@@ -68,7 +68,7 @@ Juno::Check::HTTP - An HTTP check for Juno
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

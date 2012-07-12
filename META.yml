@@ -40,4 +40,4 @@ requires:
 resources:
   bugtracker: http://github.com/xsawyerx/juno/issues
   repository: http://github.com/xsawyerx/juno
-version: 0.002
+version: 0.003
