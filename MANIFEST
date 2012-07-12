@@ -12,6 +12,7 @@ lib/Juno/Check/FPing.pm
 lib/Juno/Check/HTTP.pm
 lib/Juno/Check/RawCommand.pm
 lib/Juno/Check/SNMP.pm
+lib/Juno/Check/TCP.pm
 lib/Juno/Role/Check.pm
 t/00-compile.t
 t/check/http.t

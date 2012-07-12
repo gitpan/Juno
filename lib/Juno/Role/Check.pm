@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Role::Check;
 {
-  $Juno::Role::Check::VERSION = '0.001';
+  $Juno::Role::Check::VERSION = '0.002';
 }
 # ABSTRACT: Check role for Juno
 
@@ -80,7 +80,7 @@ Juno::Role::Check - Check role for Juno
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -118,9 +118,19 @@ decide if something is successful or not.
 Suppose you run the HTTP check and you have a special setup where 403 Forbidden
 is actually a correct result.
 
-=head1 AUTHOR
+=head1 AUTHORS
+
+=over 4
+
+=item *
 
 Sawyer X <xsawyerx@cpan.org>
+
+=item *
+
+Adam Balali <adamba@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::RawCommand;
 {
-  $Juno::Check::RawCommand::VERSION = '0.001';
+  $Juno::Check::RawCommand::VERSION = '0.002';
 }
 # ABSTRACT: A raw command check for Juno
 
@@ -93,7 +93,7 @@ Juno::Check::RawCommand - A raw command check for Juno
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -184,9 +184,19 @@ L<Juno> will call this method for you. You should not call it yourself.
 
 L<Juno> will call this method for you. You should not call it yourself.
 
-=head1 AUTHOR
+=head1 AUTHORS
+
+=over 4
+
+=item *
 
 Sawyer X <xsawyerx@cpan.org>
+
+=item *
+
+Adam Balali <adamba@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

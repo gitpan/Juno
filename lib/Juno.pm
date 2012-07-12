@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno;
 {
-  $Juno::VERSION = '0.001';
+  $Juno::VERSION = '0.002';
 }
 # ABSTRACT: Asynchronous event-driven checking mechanism
 
@@ -87,7 +87,7 @@ Juno - Asynchronous event-driven checking mechanism
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -100,7 +100,7 @@ an HTTP test every 10 seconds with an additional I<Host> header.
         checks   => {
             HTTP => {
                 headers => {
-                    [ 'Host', 'example.com' ],
+                    { 'Host', 'example.com' },
                 },
 
                 on_result => sub {
@@ -154,9 +154,19 @@ Default: hosts, interval.
 
 Run Juno.
 
-=head1 AUTHOR
+=head1 AUTHORS
+
+=over 4
+
+=item *
 
 Sawyer X <xsawyerx@cpan.org>
+
+=item *
+
+Adam Balali <adamba@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

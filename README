@@ -2,7 +2,7 @@ NAME
     Juno - Asynchronous event-driven checking mechanism
 
 VERSION
-    version 0.001
+    version 0.002
 
 SYNOPSIS
     This runs an asynchronous checker on two servers (*jack* and *jill*),
@@ -14,7 +14,7 @@ SYNOPSIS
             checks   => {
                 HTTP => {
                     headers => {
-                        [ 'Host', 'example.com' ],
+                        { 'Host', 'example.com' },
                     },
 
                     on_result => sub {
@@ -61,8 +61,10 @@ METHODS
   run
     Run Juno.
 
-AUTHOR
-    Sawyer X <xsawyerx@cpan.org>
+AUTHORS
+    *   Sawyer X <xsawyerx@cpan.org>
+
+    *   Adam Balali <adamba@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2012 by Sawyer X.

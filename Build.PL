@@ -20,10 +20,11 @@ my %module_build_args = (
   },
   "dist_abstract" => "Asynchronous event-driven checking mechanism",
   "dist_author" => [
-    "Sawyer X <xsawyerx\@cpan.org>"
+    "Sawyer X <xsawyerx\@cpan.org>",
+    "Adam Balali <adamba\@cpan.org>"
   ],
   "dist_name" => "Juno",
-  "dist_version" => "0.001",
+  "dist_version" => "0.002",
   "license" => "perl",
   "module_name" => "Juno",
   "recommends" => {},
@@ -32,6 +33,7 @@ my %module_build_args = (
     "Any::Moose" => 0,
     "AnyEvent" => 0,
     "AnyEvent::HTTP" => 0,
+    "AnyEvent::Socket" => 0,
     "AnyEvent::Util" => 0,
     "Carp" => 0,
     "Class::Load" => 0,

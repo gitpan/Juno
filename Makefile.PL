@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Asynchronous event-driven checking mechanism",
-  "AUTHOR" => "Sawyer X <xsawyerx\@cpan.org>",
+  "AUTHOR" => "Sawyer X <xsawyerx\@cpan.org>, Adam Balali <adamba\@cpan.org>",
   "BUILD_REQUIRES" => {
     "File::Find" => 0,
     "File::Temp" => 0,
@@ -31,6 +31,7 @@ my %WriteMakefileArgs = (
     "Any::Moose" => 0,
     "AnyEvent" => 0,
     "AnyEvent::HTTP" => 0,
+    "AnyEvent::Socket" => 0,
     "AnyEvent::Util" => 0,
     "Carp" => 0,
     "Class::Load" => 0,
@@ -41,7 +42,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t t/check/*.t t/role/*.t"
   }
