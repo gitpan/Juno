@@ -2,13 +2,15 @@ use strict;
 use warnings;
 package Juno::Role::Check;
 {
-  $Juno::Role::Check::VERSION = '0.003';
+  $Juno::Role::Check::VERSION = '0.004';
 }
 # ABSTRACT: Check role for Juno
 
 use AnyEvent;
 use Any::Moose 'Role';
 use namespace::autoclean;
+
+with 'MooseX::Role::Loggable';
 
 has hosts => (
     is      => 'ro',
@@ -80,7 +82,7 @@ Juno::Role::Check - Check role for Juno
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

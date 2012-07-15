@@ -36,13 +36,14 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "Class::Load" => 0,
     "JSON" => 0,
+    "MooseX::Role::Loggable" => 0,
     "System::Command" => 0,
     "Try::Tiny" => 0,
     "namespace::autoclean" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t t/check/*.t t/role/*.t"
   }

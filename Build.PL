@@ -24,7 +24,7 @@ my %module_build_args = (
     "Adam Balali <adamba\@cpan.org>"
   ],
   "dist_name" => "Juno",
-  "dist_version" => "0.003",
+  "dist_version" => "0.004",
   "license" => "perl",
   "module_name" => "Juno",
   "recommends" => {},
@@ -38,6 +38,7 @@ my %module_build_args = (
     "Carp" => 0,
     "Class::Load" => 0,
     "JSON" => 0,
+    "MooseX::Role::Loggable" => 0,
     "System::Command" => 0,
     "Try::Tiny" => 0,
     "namespace::autoclean" => 0,

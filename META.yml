@@ -32,6 +32,7 @@ requires:
   Carp: 0
   Class::Load: 0
   JSON: 0
+  MooseX::Role::Loggable: 0
   System::Command: 0
   Try::Tiny: 0
   namespace::autoclean: 0
@@ -40,4 +41,4 @@ requires:
 resources:
   bugtracker: http://github.com/xsawyerx/juno/issues
   repository: http://github.com/xsawyerx/juno
-version: 0.003
+version: 0.004

@@ -2,13 +2,15 @@ use strict;
 use warnings;
 package Juno;
 {
-  $Juno::VERSION = '0.003';
+  $Juno::VERSION = '0.004';
 }
 # ABSTRACT: Asynchronous event-driven checking mechanism
 
 use Class::Load 'load_class';
 use Any::Moose;
 use namespace::autoclean;
+
+with 'MooseX::Role::Loggable';
 
 has hosts => (
     is      => 'ro',
@@ -59,7 +61,7 @@ sub _build_check_objects {
                 or $check_data{$prop_key} = $self->$prop_key;
         }
 
-        push @checks, $class->new(%check_data);
+        push @checks, $class->new( %check_data, $self->log_fields );
     }
 
     return \@checks;
@@ -69,6 +71,7 @@ sub run {
     my $self = shift;
 
     foreach my $check ( @{ $self->check_objects } ) {
+        $self->log( 'Running', ref $check );
         $check->run();
     }
 }
@@ -87,7 +90,7 @@ Juno - Asynchronous event-driven checking mechanism
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
