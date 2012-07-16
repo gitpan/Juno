@@ -2,7 +2,7 @@ NAME
     Juno - Asynchronous event-driven checking mechanism
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
     This runs an asynchronous checker on two servers (*jack* and *jill*),
@@ -43,6 +43,11 @@ ATTRIBUTES
     The interval for every check.
 
     Default: 10 seconds.
+
+  after
+    delay seconds for first check.
+
+    Default: 0 second
 
   checks
     The checks you want to run.

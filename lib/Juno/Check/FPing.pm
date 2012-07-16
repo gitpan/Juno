@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::FPing;
 {
-  $Juno::Check::FPing::VERSION = '0.004';
+  $Juno::Check::FPing::VERSION = '0.005';
 }
 # ABSTRACT: An FPing check for Juno
 
@@ -68,7 +68,7 @@ Juno::Check::FPing - An FPing check for Juno
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 

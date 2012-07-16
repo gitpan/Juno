@@ -14,7 +14,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.30
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300016, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -41,4 +41,4 @@ requires:
 resources:
   bugtracker: http://github.com/xsawyerx/juno/issues
   repository: http://github.com/xsawyerx/juno
-version: 0.004
+version: 0.005

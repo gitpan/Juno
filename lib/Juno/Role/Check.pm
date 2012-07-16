@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Role::Check;
 {
-  $Juno::Role::Check::VERSION = '0.004';
+  $Juno::Role::Check::VERSION = '0.005';
 }
 # ABSTRACT: Check role for Juno
 
@@ -20,9 +20,15 @@ has hosts => (
 
 has interval => (
     is      => 'ro',
-    isa     => 'Int',
+    isa     => 'Num',
     default => 10,
 );
+
+has after => (
+    is      => 'ro',
+    isa     => 'Num',
+    default => 0,
+); 
 
 has on_before => (
     is        => 'ro',
@@ -62,6 +68,7 @@ sub run {
     # keep a watcher per check
     $self->set_watcher( AnyEvent->timer(
         interval => $self->interval,
+        $self->after ? (after => $self->after) : (),
         cb       => sub {
             $self->check;
         },
@@ -82,7 +89,7 @@ Juno::Role::Check - Check role for Juno
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 
@@ -97,6 +104,10 @@ Custom per-check hosts list.
 =head2 interval
 
 Custom per-check interval.
+
+=head2 after
+
+Custom pre-check delay seconds
 
 =head2 on_before
 
