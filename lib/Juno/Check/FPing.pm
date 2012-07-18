@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::FPing;
 {
-  $Juno::Check::FPing::VERSION = '0.005';
+  $Juno::Check::FPing::VERSION = '0.006';
 }
 # ABSTRACT: An FPing check for Juno
 
@@ -48,7 +48,7 @@ sub analyze_ping_result {
     if ( $timing =~ $regex1 ) {
         my ( $ip, $loss, $average ) = ( $1, $2, $3 );
 
-        return ( $timing, $loss, $average );
+        return ( $ip, $loss, $average );
     }
 
     return 0;
@@ -68,7 +68,7 @@ Juno::Check::FPing - An FPing check for Juno
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 
