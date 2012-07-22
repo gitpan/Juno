@@ -24,7 +24,6 @@ no_index:
   file:
     - README.pod
 requires:
-  Any::Moose: 0
   AnyEvent: 0
   AnyEvent::HTTP: 0
   AnyEvent::Socket: 0
@@ -32,7 +31,12 @@ requires:
   Carp: 0
   Class::Load: 0
   JSON: 0
-  MooseX::Role::Loggable: 0
+  Moo: 1.000001
+  Moo::Role: 0
+  MooX::Types::MooseLike: 0
+  MooseX::Role::Loggable: 0.008
+  Safe::Isa: 0
+  Sub::Quote: 0
   System::Command: 0
   Try::Tiny: 0
   namespace::autoclean: 0
@@ -41,4 +45,4 @@ requires:
 resources:
   bugtracker: http://github.com/xsawyerx/juno/issues
   repository: http://github.com/xsawyerx/juno
-version: 0.006
+version: 0.007

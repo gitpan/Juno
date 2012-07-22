@@ -2,53 +2,66 @@ use strict;
 use warnings;
 package Juno;
 {
-  $Juno::VERSION = '0.006';
+  $Juno::VERSION = '0.007';
 }
 # ABSTRACT: Asynchronous event-driven checking mechanism
 
+use Moo;
+use MooX::Types::MooseLike::Base qw<Str Num ArrayRef HashRef>;
+use Sub::Quote;
 use Class::Load 'load_class';
-use Any::Moose;
 use namespace::autoclean;
 
 with 'MooseX::Role::Loggable';
 
 has hosts => (
     is      => 'ro',
-    isa     => 'ArrayRef[Str]',
+    #isa     => ArrayRef[Str],
+    isa     => ArrayRef,
     default => sub { [] },
 );
 
 has interval => (
     is      => 'ro',
-    isa     => 'Num',
-    default => 10,
+    isa     => Num,
+    default => sub {10},
 );
 
 has after => (
     is      => 'ro',
-    isa     => 'Num',
-    default => 0,
+    isa     => Num,
+    default => sub {0},
 );
 
 has prop_attributes => (
     is      => 'ro',
-    isa     => 'ArrayRef[Str]',
-    default => sub { [
-        qw/hosts interval after/
-    ] },
+    #isa     => ArrayRef[Str],
+    isa     => ArrayRef,
+    default => sub {
+        [ qw<hosts interval after> ]
+    },
 );
 
 has checks => (
     is       => 'ro',
-    isa      => 'HashRef[HashRef]',
+    #isa      => HashRef[HashRef], # GH #7 on MooX::Types::MooseLike
+    isa      => quote_sub(q!
+        my $hashref = ref({});
+        ref $_[0] && ref( $_[0] ) eq $hashref
+            or die "$_[0] must be a hashref";
+
+        foreach my $key ( keys %{ $_[0] } ) {
+            my $value = $_[0]->{$key};
+            ref $value and ref($value) eq $hashref
+                or die "$value is not a hashref";
+        }
+    !),
     required => 1,
 );
 
 has check_objects => (
-    is      => 'ro',
-    isa     => 'ArrayRef',
-    lazy    => 1,
-    builder => '_build_check_objects',
+    is  => 'lazy',
+    isa => ArrayRef,
 );
 
 sub _build_check_objects {
@@ -82,8 +95,6 @@ sub run {
     }
 }
 
-__PACKAGE__->meta->make_immutable;
-
 1;
 
 
@@ -96,7 +107,7 @@ Juno - Asynchronous event-driven checking mechanism
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 

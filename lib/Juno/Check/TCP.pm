@@ -2,11 +2,12 @@ use strict;
 use warnings;
 package Juno::Check::TCP;
 {
-  $Juno::Check::TCP::VERSION = '0.006';
+  $Juno::Check::TCP::VERSION = '0.007';
 }
 # ABSTRACT: A TCP check for Juno
 
-use Any::Moose;
+use Moo;
+use MooX::Types::MooseLike::Base qw<Int>;
 use AnyEvent::Socket;
 use namespace::autoclean;
 
@@ -14,7 +15,7 @@ with 'Juno::Role::Check';
 
 has port => (
     is       => 'ro',
-    isa      => 'Int',
+    isa      => Int,
     required => 1,
 );
 
@@ -52,8 +53,6 @@ sub check {
     return 0;
 }
 
-__PACKAGE__->meta->make_immutable;
-
 1;
 
 
@@ -66,7 +65,7 @@ Juno::Check::TCP - A TCP check for Juno
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 

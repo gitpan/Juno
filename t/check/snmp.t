@@ -21,7 +21,7 @@ use Test::Fatal;
 {
     local $@ = undef;
     eval 'use Juno::Check::SNMP';
-    $@ and plan skip_all => 'AnyEvent::SNMP is required for this test';
+    $@ and plan skip_all => 'Juno::Check::SNMP is required for this test';
 }
 
 plan tests => 7;
@@ -34,7 +34,7 @@ like(
             oid         => 'stuff2'
         );
     },
-    qr/^\QAttribute (hostname) is required\E/,
+    qr/^\QMissing required arguments: hostname\E/,
     'Attribute hostname required',
 );
 
@@ -46,7 +46,7 @@ like(
             oid      => 'stuff2',
         );
     },
-    qr/^\QAttribute (community) is required\E/,
+    qr/^\QMissing required arguments: community\E/,
     'Attribute community required',
 );
 
@@ -58,7 +58,7 @@ like(
             oid       => 'stuff2',
         );
     },
-    qr/^\QAttribute (version) is required\E/,
+    qr/^\QMissing required arguments: version\E/,
     'Attribute version required',
 );
 
@@ -70,7 +70,7 @@ like(
             version   => 2,
         );
     },
-    qr/^\QAttribute (oid) is required\E/,
+    qr/^\QMissing required arguments: oid\E/,
     'Attribute oid required',
 );
 

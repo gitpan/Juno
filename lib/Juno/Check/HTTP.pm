@@ -2,25 +2,26 @@ use strict;
 use warnings;
 package Juno::Check::HTTP;
 {
-  $Juno::Check::HTTP::VERSION = '0.006';
+  $Juno::Check::HTTP::VERSION = '0.007';
 }
 # ABSTRACT: An HTTP check for Juno
 
 use AnyEvent::HTTP;
-use Any::Moose;
+use Moo;
+use MooX::Types::MooseLike::Base qw<Str HashRef>;
 use namespace::autoclean;
 
 with 'Juno::Role::Check';
 
 has path => (
     is      => 'ro',
-    isa     => 'Str',
-    default => '/',
+    isa     => Str,
+    default => sub {'/'},
 );
 
 has headers => (
     is      => 'ro',
-    isa     => 'HashRef',
+    isa     => HashRef,
     default => sub { {} },
 );
 
@@ -54,8 +55,6 @@ sub check {
     return 0;
 }
 
-__PACKAGE__->meta->make_immutable;
-
 1;
 
 
@@ -68,7 +67,7 @@ Juno::Check::HTTP - An HTTP check for Juno
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::RawCommand;
 {
-  $Juno::Check::RawCommand::VERSION = '0.006';
+  $Juno::Check::RawCommand::VERSION = '0.007';
 }
 # ABSTRACT: A raw command check for Juno
 
@@ -12,16 +12,22 @@ use Try::Tiny;
 use AnyEvent::Util 'fork_call';
 use System::Command;
 
-use Any::Moose;
+use Moo;
+use MooX::Types::MooseLike::Base qw<Str>;
 use namespace::autoclean;
 
 with 'Juno::Role::Check';
 
 has cmd => (
-    is       => 'ro',
-    isa      => 'Str',
-    required => 1,
+    is        => 'lazy',
+    isa       => Str,
+    predicate => 'has_cmd',
 );
+
+sub BUILD {
+    my $self = shift;
+    $self->has_cmd or croak 'Missing required arguments: cmd';
+}
 
 sub check {
     my $self    = shift;
@@ -66,6 +72,8 @@ sub check {
 
             $self->has_on_result and $self->on_result->( $self, $host, $data );
 
+            $data or return;
+
             if ( $data->{'exit'} == 0 ) {
                 $self->has_on_success
                     and $self->on_success->( $self, $host, $data );
@@ -79,8 +87,6 @@ sub check {
     return 0;
 }
 
-__PACKAGE__->meta->make_immutable;
-
 1;
 
 
@@ -93,7 +99,7 @@ Juno::Check::RawCommand - A raw command check for Juno
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 
