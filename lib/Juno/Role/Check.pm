@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Role::Check;
 {
-  $Juno::Role::Check::VERSION = '0.007';
+  $Juno::Role::Check::VERSION = '0.008';
 }
 # ABSTRACT: Check role for Juno
 
@@ -91,7 +91,7 @@ Juno::Role::Check - Check role for Juno
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 

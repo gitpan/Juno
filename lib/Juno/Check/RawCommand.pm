@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::RawCommand;
 {
-  $Juno::Check::RawCommand::VERSION = '0.007';
+  $Juno::Check::RawCommand::VERSION = '0.008';
 }
 # ABSTRACT: A raw command check for Juno
 
@@ -19,15 +19,10 @@ use namespace::autoclean;
 with 'Juno::Role::Check';
 
 has cmd => (
-    is        => 'lazy',
-    isa       => Str,
-    predicate => 'has_cmd',
+    is       => 'ro',
+    isa      => Str,
+    required => 1,
 );
-
-sub BUILD {
-    my $self = shift;
-    $self->has_cmd or croak 'Missing required arguments: cmd';
-}
 
 sub check {
     my $self    = shift;
@@ -99,7 +94,7 @@ Juno::Check::RawCommand - A raw command check for Juno
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 

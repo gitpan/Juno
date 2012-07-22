@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::SNMP;
 {
-  $Juno::Check::SNMP::VERSION = '0.007';
+  $Juno::Check::SNMP::VERSION = '0.008';
 }
 # ABSTRACT: an SNMP check for Juno
 
@@ -100,7 +100,7 @@ Juno::Check::SNMP - an SNMP check for Juno
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHORS
 

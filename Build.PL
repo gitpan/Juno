@@ -24,7 +24,7 @@ my %module_build_args = (
     "Adam Balali <adamba\@cpan.org>"
   ],
   "dist_name" => "Juno",
-  "dist_version" => "0.007",
+  "dist_version" => "0.008",
   "license" => "perl",
   "module_name" => "Juno",
   "recommends" => {},
