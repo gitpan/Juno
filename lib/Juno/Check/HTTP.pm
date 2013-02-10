@@ -2,14 +2,14 @@ use strict;
 use warnings;
 package Juno::Check::HTTP;
 {
-  $Juno::Check::HTTP::VERSION = '0.008';
+  $Juno::Check::HTTP::VERSION = '0.009';
 }
 # ABSTRACT: An HTTP check for Juno
 
 use AnyEvent::HTTP;
 use Moo;
 use MooX::Types::MooseLike::Base qw<Str HashRef>;
-use namespace::autoclean;
+use namespace::sweep;
 
 with 'Juno::Role::Check';
 
@@ -31,7 +31,7 @@ sub check {
     my $path  = $self->path;
 
     foreach my $host (@hosts) {
-        my $url  = "http://$host" . $path;
+        my $url = "http://$host" . $path;
 
         $self->has_on_before
             and $self->on_before->( $self, $host );
@@ -67,7 +67,7 @@ Juno::Check::HTTP - An HTTP check for Juno
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 DESCRIPTION
 

@@ -2,14 +2,14 @@ use strict;
 use warnings;
 package Juno::Check::TCP;
 {
-  $Juno::Check::TCP::VERSION = '0.008';
+  $Juno::Check::TCP::VERSION = '0.009';
 }
 # ABSTRACT: A TCP check for Juno
 
 use Moo;
 use MooX::Types::MooseLike::Base qw<Int>;
 use AnyEvent::Socket;
-use namespace::autoclean;
+use namespace::sweep;
 
 with 'Juno::Role::Check';
 
@@ -65,7 +65,7 @@ Juno::Check::TCP - A TCP check for Juno
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 DESCRIPTION
 

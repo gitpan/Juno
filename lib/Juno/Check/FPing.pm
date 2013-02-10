@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::FPing;
 {
-  $Juno::Check::FPing::VERSION = '0.008';
+  $Juno::Check::FPing::VERSION = '0.009';
 }
 # ABSTRACT: An FPing check for Juno
 
@@ -10,7 +10,7 @@ use Carp;
 use AnyEvent::Util 'fork_call';
 use Moo;
 use MooX::Types::MooseLike::Base qw<Int>;
-use namespace::autoclean;
+use namespace::sweep;
 
 extends 'Juno::Check::RawCommand';
 
@@ -70,7 +70,7 @@ Juno::Check::FPing - An FPing check for Juno
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 DESCRIPTION
 

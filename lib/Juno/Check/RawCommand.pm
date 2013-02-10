@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Juno::Check::RawCommand;
 {
-  $Juno::Check::RawCommand::VERSION = '0.008';
+  $Juno::Check::RawCommand::VERSION = '0.009';
 }
 # ABSTRACT: A raw command check for Juno
 
@@ -14,7 +14,7 @@ use System::Command;
 
 use Moo;
 use MooX::Types::MooseLike::Base qw<Str>;
-use namespace::autoclean;
+use namespace::sweep;
 
 with 'Juno::Role::Check';
 
@@ -94,7 +94,7 @@ Juno::Check::RawCommand - A raw command check for Juno
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 DESCRIPTION
 

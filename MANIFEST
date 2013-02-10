@@ -10,12 +10,14 @@ dist.ini
 lib/Juno.pm
 lib/Juno/Check/FPing.pm
 lib/Juno/Check/HTTP.pm
+lib/Juno/Check/Ping.pm
 lib/Juno/Check/RawCommand.pm
 lib/Juno/Check/SNMP.pm
 lib/Juno/Check/TCP.pm
 lib/Juno/Role/Check.pm
 t/00-compile.t
 t/check/http.t
+t/check/ping.t
 t/check/rawcommand.t
 t/check/snmp.t
 t/new.t
