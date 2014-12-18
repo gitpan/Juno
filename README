@@ -2,7 +2,7 @@ NAME
     Juno - Asynchronous event-driven checking mechanism
 
 VERSION
-    version 0.009
+    version 0.010
 
 SYNOPSIS
     This runs an asynchronous checker on two servers (*jack* and *jill*),

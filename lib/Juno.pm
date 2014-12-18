@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 package Juno;
-{
-  $Juno::VERSION = '0.009';
-}
 # ABSTRACT: Asynchronous event-driven checking mechanism
-
+$Juno::VERSION = '0.010';
 use Moo;
 use MooX::Types::MooseLike::Base qw<Str Num ArrayRef HashRef>;
 use Sub::Quote;
@@ -85,9 +82,11 @@ sub run {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -95,7 +94,7 @@ Juno - Asynchronous event-driven checking mechanism
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
@@ -323,7 +322,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

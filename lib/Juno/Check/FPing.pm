@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 package Juno::Check::FPing;
-{
-  $Juno::Check::FPing::VERSION = '0.009';
-}
 # ABSTRACT: An FPing check for Juno
-
+$Juno::Check::FPing::VERSION = '0.010';
 use Carp;
 use AnyEvent::Util 'fork_call';
 use Moo;
@@ -60,9 +57,11 @@ sub analyze_ping_result {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -70,7 +69,7 @@ Juno::Check::FPing - An FPing check for Juno
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 DESCRIPTION
 
@@ -164,7 +163,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

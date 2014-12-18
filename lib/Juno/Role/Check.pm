@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 package Juno::Role::Check;
-{
-  $Juno::Role::Check::VERSION = '0.009';
-}
 # ABSTRACT: Check role for Juno
-
+$Juno::Role::Check::VERSION = '0.010';
 use AnyEvent;
 use Moo::Role;
 use MooX::Types::MooseLike::Base qw<Str Num CodeRef ArrayRef>;
@@ -79,9 +76,11 @@ sub run {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -89,7 +88,7 @@ Juno::Role::Check - Check role for Juno
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 DESCRIPTION
 
@@ -244,7 +243,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

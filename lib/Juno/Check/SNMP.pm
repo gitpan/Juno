@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 package Juno::Check::SNMP;
-{
-  $Juno::Check::SNMP::VERSION = '0.009';
-}
 # ABSTRACT: an SNMP check for Juno
-
+$Juno::Check::SNMP::VERSION = '0.010';
 use Carp;
 use Moo;
 use MooX::Types::MooseLike::Base qw<Str Int>;
@@ -92,7 +89,10 @@ sub check {
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -100,7 +100,7 @@ Juno::Check::SNMP - an SNMP check for Juno
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 AUTHORS
 
@@ -124,4 +124,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
